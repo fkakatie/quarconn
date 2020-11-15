@@ -1,0 +1,21 @@
+{
+  "name": "quarconn",
+  "version": "1.0.0",
+  "description": "Movie connections made during quarantine.",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss assets/style.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fkakatie/quarconn.git"
+  },
+  "author": "@fkakatie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fkakatie/quarconn/issues"
+  },
+  "homepage": "https://github.com/fkakatie/quarconn#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}

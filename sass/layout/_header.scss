@@ -1,0 +1,10 @@
+header {
+    background: linear-gradient(to bottom right, $color-green, $color-blue, $color-purple);
+    color: $color-white;
+    flex-shrink: 0;
+
+    & div {
+        text-align: center;
+        @include container
+    }
+}

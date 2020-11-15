@@ -1,0 +1,37 @@
+body {
+    font-size: 1.6rem;
+    line-height: 1.6;
+    color: $color-gray-dark;
+}
+
+h1 {
+    font-size: 3.2rem;
+    font-weight: $weight-heavy;
+}
+
+ol {
+    list-style: none;
+    counter-reset: counter;
+
+    & li {
+        counter-increment: counter;
+        
+        &::before {
+            content: counter(counter) ". ";
+            font-family: $font-mono;
+            font-weight: $weight-heavy;
+            color: $color-black;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: $weight-heavy;
+    color: $color-black;
+    transition: 0.2s;
+
+    &:hover {
+        color: $color-blue;
+    }
+}

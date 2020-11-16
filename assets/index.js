@@ -1,9 +1,13 @@
 const fetchMovieData = async () => {
     try {
-        let resp = await fetch("/movieData.json");
+        let resp = await fetch("/movieData.json", { cache: "reload" });
         let data = await resp.json();
-        console.log("data", data);
-        return data.data;
+        // console.log("data", data);
+        if (data.data) { 
+            return data.data;
+        } else {
+            return data;
+        }
     } catch (err) {
         console.error(err);
     }
@@ -78,11 +82,8 @@ const buildMovie = async (title, connection, choice) => {
                     $actorFigure.append($actorCaption);
 
                 $castDiv.append($actorFigure);
-
             }
-
             $movieArticle.prepend($castDiv)
-
         }
 
         $movieDetails.append($movieBadge, $movieTitle, $moviePlot);
@@ -116,7 +117,6 @@ const buildActorArr = (connection) => {
 }
 
 const buildSpinner = () => {
-    console.log(`building spinner`);
     const $main = document.querySelector("main");
 
     const $spinner = document.createElement("div");
@@ -131,17 +131,17 @@ const buildSpinner = () => {
 }
 
 const removeSpinner = () => {
-    console.log(`removing spinner`);
     const $spinner = document.querySelector("#spinner");
     if ($spinner) { $spinner.remove() };
 }
 
 const init = async () => {
+    document.querySelector("html").setAttribute("lang", "en");
     buildMovieContainer();
     buildSpinner();
     const movies = await fetchMovieData();
+    // await buildMovie(movies[2].title, movies[2].connection, movies[2].choice);
     for (let movie of movies) {
-        // await buildMovie(movies[2].title, movies[2].connection, movies[2].choice);
         await buildMovie(movie.title, movie.connection, movie.choice);
     }
     removeSpinner();

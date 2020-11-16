@@ -71,7 +71,7 @@ a:hover {
   position: relative;
   margin: 0 auto;
   padding: 2rem 0;
-  width: 500px;
+  width: 800px;
   max-width: 100%;
 }
 
@@ -211,8 +211,9 @@ a:hover {
 }
 
 #spinner span {
+  font-family: "Century Gothic, sans-serif";
   letter-spacing: 0.2rem;
-  animation-name: blink;
+  animation-name: dotdotdot;
   animation-duration: 1s;
   animation-iteration-count: infinite;
 }
@@ -225,7 +226,7 @@ a:hover {
   animation-delay: 0.5s;
 }
 
-@keyframes blink {
+@keyframes dotdotdot {
   0% {
     opacity: 0;
   }

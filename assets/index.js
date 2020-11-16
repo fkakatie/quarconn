@@ -3,7 +3,7 @@ const fetchMovieData = async () => {
         let resp = await fetch("/movieData.json");
         let data = await resp.json();
         console.log("data", data);
-        return data;
+        return data.data;
     } catch (err) {
         console.error(err);
     }
